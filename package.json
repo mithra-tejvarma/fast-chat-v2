@@ -10,8 +10,9 @@
   "scripts": {
     "start": "cd server && yarn start",
     "dev": "concurrently \"cd server && yarn dev\" \"cd client && yarn dev\"",
-    "build": "cd client && yarn build",
-    "install-all": "yarn install && cd client && yarn install && cd ../server && yarn install"
+    "build": "yarn install-all && cd client && yarn build",
+    "install-all": "yarn install && cd client && yarn install && cd ../server && yarn install",
+    "postinstall": "cd client && yarn install && cd ../server && yarn install"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
